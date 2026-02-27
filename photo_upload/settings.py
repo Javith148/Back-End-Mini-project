@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'photo_upload.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'mysql.connector.django',
-        'NAME': 'image_table',
-        'USER': 'root',
-        'PASSWORD': 'javith',
-        'HOST': 'localhost',
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
         'PORT': '3306',
     }
 }
