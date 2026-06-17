@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cards'
+    'cards',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -123,8 +124,16 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# Supabase S3 Storage Settings
+DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+AWS_ACCESS_KEY_ID = "9d01fc953e8a1f2bccea4c7d154c9348"
+AWS_SECRET_ACCESS_KEY = "f089c526e37669f668e481e7b96e4cf8917ca8985c53eef9e040f00660532fb7"
+AWS_STORAGE_BUCKET_NAME = "media"
+AWS_S3_ENDPOINT_URL = "https://rltpazibloueeeibmmak.supabase.co/storage/v1/s3"
+AWS_QUERYSTRING_AUTH = False
+AWS_S3_ADDRESSING_STYLE = "path"
+AWS_S3_SIGNATURE_VERSION = 's3v4'
+AWS_S3_CUSTOM_DOMAIN = f"rltpazibloueeeibmmak.supabase.co/storage/v1/object/public/{AWS_STORAGE_BUCKET_NAME}"
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST ='smtp.gmail.com'
