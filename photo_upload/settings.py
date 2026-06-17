@@ -53,8 +53,7 @@ WSGI_APPLICATION = 'photo_upload.wsgi.application'
 # DATABASE CONFIGURATION
 DATABASES = {
     'default': dj_database_url.config(
-        default='mysql://root:javith@localhost:3306/image_table',
-        engine='mysql.connector.django'
+        default=os.environ.get("DATABASE_URL")
     )
 }
 
